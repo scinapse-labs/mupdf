@@ -1380,6 +1380,8 @@ fz_new_pixmap_from_float_data(fz_context *ctx, fz_colorspace *cs, int w, int h, 
 
 			mu /= nsamples;
 			d0 = maxsample - minsample;
+			if (d0 == 0)
+				d0 = 1;
 			k1 = (MAXLD - MINLD) / d0;
 			sigma = d0 / KIMKAUTZC1;
 			sigmasq2 = sigma * sigma * 2;
